@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.5</version>
+		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rental.db</groupId>
@@ -15,7 +15,7 @@
 	<description>Sistema de locacao de equipamentos para eventos</description>
 
 	<properties>
-		<java.version>17</java.version>
+		<java.version>25</java.version>
 		<springdoc.version>2.5.0</springdoc.version>
 	</properties>
 

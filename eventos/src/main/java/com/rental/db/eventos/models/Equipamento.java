@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
@@ -14,35 +16,39 @@ import jakarta.persistence.Table;
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-     @Column(name="Id")
+     @Column(name="id_equipamento")
      private Integer id;
 
-     @Column(name="Marca")
+     @Column(name="marca")
      private String marca;
 
-     @Column(name="Modelo")
+     @Column(name="modelo")
      private String modelo;
 
-     @Column(name="Categoria")
+     @Column(name="categoria")
      private String categoria;
 
-     @Column(name="Potencia")
+     @Column(name="potencia")
      private int potencia;
 
-     @Column(name="Material")
+     @Column(name="material")
      private String material;
 
-     @Column(name="Peso")
+     @Column(name="peso")
      private int peso;
 
-      @Column(name="Dimensoes")
+      @Column(name="dimensoes")
       private int dimensoes;
 
-      @Column(name="Cor")
+      @Column(name="cor")
       private String cor;
 
-      @Column(name="Quantidade")
+      @Column(name="quantidade")
       private int quantidade;
+
+      @ManyToOne
+      @JoinColumn(name = "movimentacao_id", nullable = false)
+      private Movimentacao movimentacao;
 
       public Equipamento() {
       }
