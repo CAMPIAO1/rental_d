@@ -1,0 +1,114 @@
+﻿/* Estilização Padrão para o Projeto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #34495e;
+  font-size: 1.25rem;
+}
+
+.menu-abas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.btn-aba {
+  flex: 1;
+  padding: 10px;
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-aba.ativa {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 5px;
+  color: white;
+}
+
+button i {
+  margin-right: 6px;
+}
+
+#btnCadastrarEquip, #btnCadastrarUser, #btnCadastrarMov {
+  background-color: #28a745;
+}
+
+#btnPesquisarEquip, #btnPesquisarUser, #btnPesquisarMov {
+  background-color: #007bff;
+}
+
+#btnDeletarEquip, #btnDeletarUser, #btnDeletarMov {
+  background-color: #dc3545;
+}
+
+#btnLimparEquip, #btnLimparUser, #btnLimparMov {
+  background-color: #6c757d;
+}
+
+button:hover {
+  opacity: 0.9;
+}
