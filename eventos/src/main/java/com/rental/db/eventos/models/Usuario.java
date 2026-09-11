@@ -1,34 +1,40 @@
 package com.rental.db.eventos.models;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "usuario")
+@Table(name = "usuario")
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="Id")
+    @Column(name = "Id")
     private Integer id;
 
-    @Column(name="Nome")
+    @Column(name = "Nome")
     private String nome;
-   
-    @Column(name="Email")
+
+    @Column(name = "Email")
     private String email;
 
-    @Column(name="Cpf")
+    @Column(name = "Cpf")
     private String cpf;
 
-    @Column(name="data_nascimento")
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
+
+    // Relacionamento bidirecional: aponta para o campo 'private Usuario usuario;' em Movimentacao
+    @OneToMany(mappedBy = "usuario")
+    private List<Movimentacao> movimentacoes;
 
     public Usuario() {
     }
@@ -80,5 +86,12 @@ public class Usuario {
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    
+
+    public List<Movimentacao> getMovimentacoes() {
+        return movimentacoes;
+    }
+
+    public void setMovimentacoes(List<Movimentacao> movimentacoes) {
+        this.movimentacoes = movimentacoes;
+    }
 }

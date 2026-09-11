@@ -62,7 +62,7 @@ public class EquipamentoService {
             if (equipamento.getPeso() != 0) {
                 equipamentoRecuperado.setPeso(equipamento.getPeso());
             }
-            if (equipamento.getDimensoes() != 0) {
+            if (equipamento.getDimensoes() != null) {
                 equipamentoRecuperado.setDimensoes(equipamento.getDimensoes());
             }
             if (equipamento.getCor() != null) {

@@ -1,12 +1,13 @@
 package com.rental.db.eventos.models;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -38,7 +39,7 @@ import jakarta.persistence.Table;
      private int peso;
 
       @Column(name="dimensoes")
-      private int dimensoes;
+      private String dimensoes;
 
       @Column(name="cor")
       private String cor;
@@ -46,105 +47,115 @@ import jakarta.persistence.Table;
       @Column(name="quantidade")
       private int quantidade;
 
-      @ManyToOne
-      @JoinColumn(name = "movimentacao_id", nullable = false)
-      private Movimentacao movimentacao;
+      @OneToMany(mappedBy = "equipamento")
+      private List<Movimentacao> movimentacoes;
 
       public Equipamento() {
+        
       }
 
-      public Equipamento(Integer id, String marca, String modelo, String categoria, int potencia, String material,
-            int peso, int dimensoes, String cor, int quantidade) {
+    public Equipamento(String categoria, String cor, String dimensoes, Integer id, String marca, String material, String modelo, List<Movimentacao> movimentacoes, int peso, int potencia, int quantidade) {
+        this.categoria = categoria;
+        this.cor = cor;
+        this.dimensoes = dimensoes;
         this.id = id;
         this.marca = marca;
-        this.modelo = modelo;
-        this.categoria = categoria;
-        this.potencia = potencia;
         this.material = material;
+        this.modelo = modelo;
+        this.movimentacoes = movimentacoes;
         this.peso = peso;
-        this.dimensoes = dimensoes;
-        this.cor = cor;
+        this.potencia = potencia;
         this.quantidade = quantidade;
-      }
+    }
 
-      public Integer getId() {
-          return id;
-      }
+    public Integer getId() {
+        return id;
+    }
 
-      public void setId(Integer id) {
-          this.id = id;
-      }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-      public String getMarca() {
-          return marca;
-      }
+    public String getMarca() {
+        return marca;
+    }
 
-      public void setMarca(String marca) {
-          this.marca = marca;
-      }
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
-      public String getModelo() {
-          return modelo;
-      }
+    public String getModelo() {
+        return modelo;
+    }
 
-      public void setModelo(String modelo) {
-          this.modelo = modelo;
-      }
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
 
-      public String getCategoria() {
-          return categoria;
-      }
+    public String getCategoria() {
+        return categoria;
+    }
 
-      public void setCategoria(String categoria) {
-          this.categoria = categoria;
-      }
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
-      public int getPotencia() {
-          return potencia;
-      }
+    public int getPotencia() {
+        return potencia;
+    }
 
-      public void setPotencia(int potencia) {
-          this.potencia = potencia;
-      }
+    public void setPotencia(int potencia) {
+        this.potencia = potencia;
+    }
 
-      public String getMaterial() {
-          return material;
-      }
+    public String getMaterial() {
+        return material;
+    }
 
-      public void setMaterial(String material) {
-          this.material = material;
-      }
+    public void setMaterial(String material) {
+        this.material = material;
+    }
 
-      public int getPeso() {
-          return peso;
-      }
+    public int getPeso() {
+        return peso;
+    }
 
-      public void setPeso(int peso) {
-          this.peso = peso;
-      }
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
 
-      public int getDimensoes() {
-          return dimensoes;
-      }
+    public String getDimensoes() {
+        return dimensoes;
+    }
 
-      public void setDimensoes(int dimensoes) {
-          this.dimensoes = dimensoes;
-      }
+    public void setDimensoes(String dimensoes) {
+        this.dimensoes = dimensoes;
+    }
 
-      public String getCor() {
-          return cor;
-      }
+    public String getCor() {
+        return cor;
+    }
 
-      public void setCor(String cor) {
-          this.cor = cor;
-      }
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
 
-      public int getQuantidade() {
-          return quantidade;
-      }
+    public int getQuantidade() {
+        return quantidade;
+    }
 
-      public void setQuantidade(int quantidade) {
-          this.quantidade = quantidade;
-      }
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public List<Movimentacao> getMovimentacoes() {
+        return movimentacoes;
+    }
+
+    public void setMovimentacoes(List<Movimentacao> movimentacoes) {
+        this.movimentacoes = movimentacoes;
+    }
+
+    
       
-}
+   }
