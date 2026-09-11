@@ -29,6 +29,7 @@ import jakarta.persistence.Table;
      @Column(name="categoria")
      private String categoria;
 
+    
      @Column(name="potencia")
      private int potencia;
 
